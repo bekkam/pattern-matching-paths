@@ -139,6 +139,12 @@ To run program, from the command line, type:
 
 This assumes you are in the same directory that houses `input_file.txt` (per the example in the instructions).
 
+### Assumptions
+This program assumes ascii characters 0-41 wont appear in file names.  I'm not altogether clear on what characters are invalid across operating systems (I use windows, cygwin/posix, and mac osx so.. it's a bit murky), but it seems reasonable to assume such special characters wouldn't be valid filenames.
+
+### Improvements
+With more time, I would write tests for all of the above methods.  
+
 ### Runtime
 Big O notation looks at the efficiency of algorithms.
 Here, the worst case runtime would be searching all patterns with the same field count as a given path, for each path.
@@ -149,8 +155,3 @@ n (for path in paths) * m (for pattern in patterns of matching field count) * m 
 The program uses a nested dictionary to store patterns by field count (outer key) and then by number of wilds (inner key).  By using a nested dictionary, the program avoids searching every pattern for each path - it only searches patterns of the requisite field count for each path, and it searches patterns in order of least number of wilds first.  
 
 To minimize memory demands and improve performance, the program also makes use of itertools.  
-### Assumptions
-This program assumes ascii characters 0-41 wont appear in file names.  I'm not altogether clear on what characters are invalid across operating systems (I use windows, cygwin/posix, and mac osx so.. it's a bit murky), but it seems reasonable to assume such special characters wouldn't be valid filenames.
-
-### Improvements
-With more time, I would write tests for all of the above methods.  
