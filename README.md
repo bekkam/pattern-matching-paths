@@ -153,4 +153,4 @@ To minimize memory demands and improve performance, the program also makes use o
 This program assumes ascii characters 0-41 wont appear in file names.  I'm not altogether clear on what characters are invalid across operating systems (I use windows, cygwin/posix, and mac osx so.. it's a bit murky), but it seems reasonable to assume such special characters wouldn't be valid filenames.
 
 ### Improvements
-With more time, I would write tests for all of the above methods.  Alas, this code challenge arrived in the middle of an already jam-packed week, so I was not able to include these improvements.  
+With more time, I would write tests for all of the above methods.  
