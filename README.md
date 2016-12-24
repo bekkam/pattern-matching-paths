@@ -60,6 +60,7 @@ you choose; your program file need not be executable on its own.
 However, it must read input directly from stdin and print to stdout. 
 
 You may write your program in any of the following languages: 
+
 JavaScript (Node.js) 
 Python (2.7 or 3.x) 
 
@@ -76,7 +77,8 @@ for an algorithm that's better than quadratic. Some of our test cases
 are very large. To pass them all, your program will need to be pretty 
 fast! 
 
-Example Input 
+###### Example Input 
+
 `6 `
 
 `*,b,* `
@@ -104,7 +106,7 @@ Example Input
 `foo/bar/baz/ `
 
 
-Example Output 
+###### Example Output 
 
 `*,x,y,z `
 
@@ -132,17 +134,19 @@ Example Output
 
 ### Instructions
 To run program, from the command line, type:
+
 `cat input_file.txt | python pattern_matching_paths_final.py > output_file` 
+
 This assumes you are in the same directory that houses `input_file.txt` (per the example in the instructions).
 
 ### Runtime
 Big O notation looks at the efficiency of algorithms.
-Here, the worst case runtime is likely searching for a matching pattern for each path.
+Here, the worst case runtime would be searching all patterns with the same field count as a given path, for each path.
 
-If the number of paths is n, and the number of patterns is m, then I would guess the runtime is:
-n (for path in paths) * m (for pattern in patterns of matching field count) * m (pattern.split) * [n * m] (because in order to test if 2 strings are identical, python must test each character in each string)
+If the number of paths is n, and the number of patterns with the same field count is m, then the runtime is:
+n (for path in paths) * m (for pattern in patterns of matching field count) * m (pattern.split()) * \[n * m\] (because in order to test if 2 strings are identical, python must test each character in each string).
 
-The program uses a nested dictionary to store patterns by field count (outer key) and by number of wilds (inner key).  By using a nested dictionary, the program avoids searching every pattern for each path - it only searches patterns of the requisite field count for each path, and it searches patterns in order of least number of wilds first.  
+The program uses a nested dictionary to store patterns by field count (outer key) and then by number of wilds (inner key).  By using a nested dictionary, the program avoids searching every pattern for each path - it only searches patterns of the requisite field count for each path, and it searches patterns in order of least number of wilds first.  
 
 To minimize memory demands and improve performance, the program also makes use of itertools.  
 ### Assumptions
