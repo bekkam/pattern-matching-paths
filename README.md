@@ -22,7 +22,7 @@ strings and two wildcards. It will successfully match the paths
 `A/foo/B/bar/C` and `A/123/B/456/C`, but not `A/B/C`, 
 `A/foo/bar/B/baz/C`, or `foo/B/bar/C`. 
 
-#### Input Format 
+### Input Format 
 
 The first line contains an integer, N, specifying the number of 
 patterns. The following N lines contain one pattern per line. You may 
@@ -78,27 +78,45 @@ fast!
 
 Example Input 
 `6 `
+
 `*,b,* `
+
 `a,*,*` 
+
 `*,*,c `
+
 `foo,bar,baz `
+
 `w,x,*,* `
+
 `*,x,y,z `
+
 `5 `
+
 `/w/x/y/z/ `
+
 `a/b/c `
+
 `foo/ `
+
 `foo/bar/ `
+
 `foo/bar/baz/ `
 
+
 Example Output 
+
 `*,x,y,z `
+
 `a,*,* `
+
 `NO MATCH `
+
 `NO MATCH `
+
 `foo,bar,baz `
 
-Tips 
+### Tips 
 
 - Code correctness and quality matter more to us than algorithmic wizardry. Is your program easy to understand? Is it clearly organized and documented? Does it correctly handle all the edges cases? Imagine you are writing a library for other developers to use. How would that affect your design? 
 
